@@ -1,6 +1,3 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-
 const pizzaData = [
   {
     name: "Focaccia",
@@ -45,39 +42,3 @@ const pizzaData = [
     soldOut: false,
   },
 ];
-
-function App() {
-  return (
-    <div>
-      <h1>Hello, World!</h1>
-      <div>
-        I want:
-        <Pizza pizzaType={pizzaData[0]} />
-        <Pizza pizzaType={pizzaData[1]} />
-        <Pizza pizzaType={pizzaData[2]} />
-      </div>
-    </div>
-  );
-}
-
-function Pizza(props) {
-  console.log(props);
-  return (
-    <div>
-      <h1>{props.pizzaType.name}</h1>
-      <img src={props.pizzaType.photoName} alt={props.pizzaType.name} />
-      <p>{props.pizzaType.ingredients}</p>
-    </div>
-  );
-}
-
-//rendering app in the DOM
-//React 18+
-const root = ReactDOM.createRoot(document.getElementById("root"));
-
-//Strict mode is for development causing 2 renders and checks for things
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
